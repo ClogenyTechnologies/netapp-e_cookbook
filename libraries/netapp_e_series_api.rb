@@ -284,6 +284,15 @@ class NetApp
         post_key_value('Chef', client_info) if @asup
       end
 
+      # upgrade firware version
+      def upgrade_firmware(storage_system_ip, request_body)
+        sys_id = storage_system_id(storage_system_ip)
+        return false if sys_id.nil?
+
+        response = request(:post, "/devmgr/v2/storage-systems/#{sys_id}/cfw-upgrade", request_body.to_json)
+        status(response, 202, [202], 'Failed to upgrade firmware')
+      end
+
       private
 
       # Get the storage-system-id using storage syste ip

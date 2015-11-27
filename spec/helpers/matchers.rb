@@ -102,4 +102,8 @@ if defined?(ChefSpec)
   def delete_netapp_e_mirror_group(resource_name)
     ChefSpec::Matchers::ResourceMatcher.new(:netapp_e_mirror_group, :delete, resource_name)
   end
+
+  def upgrade_netapp_e_firmware(resource_name)
+    ChefSpec::Matchers::ResourceMatcher.new(:netapp_e_firmware, :upgrade, resource_name)
+  end
 end

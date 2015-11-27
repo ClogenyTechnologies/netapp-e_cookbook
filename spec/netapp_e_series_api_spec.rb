@@ -827,4 +827,15 @@ describe 'netapp_e_series_api' do
       expect(@netapp_api.send(:mirror_group_id, '12345', 'demo_mirror_group')).to eq(nil)
     end
   end
+
+  context 'firmware' do
+    it 'is upgraded' do
+      response = double
+      request_body = "{\"cfw_file\":\"test_file_name\"}"
+      expect(@netapp_api).to receive(:storage_system_id).with('10.0.0.1').and_return('12345')
+      expect(@netapp_api).to receive(:request).with(:post, '/devmgr/v2/storage-systems/12345/cfw-upgrade', request_body).and_return(response)
+      expect(@netapp_api).to receive(:status).with(response, 202, [202], 'Failed to upgrade firmware')
+      @netapp_api.upgrade_firmware('10.0.0.1', cfw_file: 'test_file_name')
+    end
+  end
 end
