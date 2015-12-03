@@ -24,6 +24,14 @@ default['netapp']['ssl_port'] = 8443
 # default['netapp']['api']['timeout'] = 60000
 
 # mirror group
-default['netapp']['storage_system_ip'] = '10.113.1.130'
+default['netapp']['storage_system_ip'] = '10.113.1.18'
 default['netapp']['mirror_group']['name'] = 'mirror_group'
 default['netapp']['mirror_group']['secondary_array_id'] = 'e9f486b8-8634-4f58-9563-c57561633376'
+
+# Manage Controller Network configuration
+default['netapp']['network_configuration']['controllerRef'] = '070000000000000000000001'
+default['netapp']['network_configuration']['interfaceRef'] = '2800070000000000000000000002000000000000'
+
+# Provide the values for the parameters whose values needs to be updated and keep the rest of the variable values empty or false for enableRemoteAccess variable
+default['netapp']['network_configuration']['update_parameters'] = { 'enableRemoteAccess' => false, 'ipv4GatewayAddress' => '', 'ipv6GatewayAddress' => '', 'ipv4Address' => '', 'ipv6LocalAddress' => '' }
+

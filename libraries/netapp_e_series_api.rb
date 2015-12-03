@@ -125,6 +125,23 @@ class NetApp
         status(response, 200, [200], 'Failed to delete storage pool')
       end
 
+      # Call network API /devmgr/v2/storage-systems/#{storage_sys_id}/configuration/ethernet-interfaces to update Network Configurations.
+      def update_network_configuration(storage_system_ip, request_body)
+        sys_id = storage_system_id(storage_system_ip)
+        return false if sys_id.nil?
+
+        request_body[:update_parameters].each do |key, _value|
+          if request_body[:update_parameters][key] == ''
+            request_body[:update_parameters].delete(key)
+          end
+        end
+        request_body = request_body.merge(request_body[:update_parameters])
+        request_body.delete(:update_parameters)
+        request_body.delete(:update_parameters)
+        response = request(:post, "/devmgr/v2/storage-systems/#{storage_sys_id}/configuration/ethernet-interfaces", request_body.to_json)
+        status(response, 200, [200], 'Failed to update Network Parameters')
+      end
+
       # Call volume API /devmgr/v2/{storage-system-id}/volumes to create a new volume.
       def create_volume(storage_system_ip, request_body)
         sys_id = storage_system_id(storage_system_ip)
@@ -367,7 +384,6 @@ class NetApp
         end
         nil
       end
-
 
       # Get the mirror id using storage-system-ip and async-mirrors
       def mirror_group_id(storage_sys_id, name)
