@@ -24,6 +24,10 @@ default['netapp']['ssl_port'] = 8443
 # default['netapp']['api']['timeout'] = 60000
 
 # mirror group
-default['netapp']['storage_system_ip'] = '10.113.1.130'
+default['netapp']['storage_system_ip'] = '10.113.1.18'
 default['netapp']['mirror_group']['name'] = 'mirror_group'
 default['netapp']['mirror_group']['secondary_array_id'] = 'e9f486b8-8634-4f58-9563-c57561633376'
+
+# iscsi updation
+default['netapp']['iscsi']['alias_name'] = 'demo_alias'
+default['netapp']['iscsi']['enable_chap_authentication'] = false
