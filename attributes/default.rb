@@ -27,3 +27,13 @@ default['netapp']['ssl_port'] = 8443
 default['netapp']['storage_system_ip'] = '10.113.1.130'
 default['netapp']['mirror_group']['name'] = 'mirror_group'
 default['netapp']['mirror_group']['secondary_array_id'] = 'e9f486b8-8634-4f58-9563-c57561633376'
+
+# Snapshot Volume
+default['netapp']['snapshot_volume']['name'] = 'demo_snapshot_volume'
+default['netapp']['snapshot_volume']['snapshot_image_id'] = '3400000060080E5000322230006303BB543F6228'
+default['netapp']['snapshot_volume']['full_threshold'] = 0
+default['netapp']['snapshot_volume']['view_mode'] = 'readWrite'
+default['netapp']['snapshot_volume']['repository_percentage'] = 10_000_000_000
+default['netapp']['snapshot_volume']['repository_pool_id'] = '0400000060080E50003222300000025853F33C1A'
+
+
