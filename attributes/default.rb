@@ -31,3 +31,11 @@ default['netapp']['mirror_group']['secondary_array_id'] = 'e9f486b8-8634-4f58-95
 # iscsi updation
 default['netapp']['iscsi']['alias_name'] = 'demo_alias'
 default['netapp']['iscsi']['enable_chap_authentication'] = false
+
+#Thin Volumes
+default['netapp']['thin_volume']['pool_id'] = '0400000060080E50003222300000025853F33C1A'
+default['netapp']['thin_volume']['name'] = 'demo_thin_volume'
+default['netapp']['thin_volume']['size_unit'] = 'bytes' 
+default['netapp']['thin_volume']['virtual_size'] = 4
+default['netapp']['thin_volume']['repository_size'] = 4
+default['netapp']['thin_volume']['max_repository_size'] = 128
