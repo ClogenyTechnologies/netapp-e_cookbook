@@ -38,4 +38,3 @@ end
 netapp_e_ssd_cache node['netapp']['storage_system_ip'] do
   action :suspend
 end
-

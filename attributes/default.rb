@@ -29,6 +29,6 @@ default['netapp']['mirror_group']['name'] = 'mirror_group'
 default['netapp']['mirror_group']['secondary_array_id'] = 'e9f486b8-8634-4f58-9563-c57561633376'
 
 # ssd cache / flash cache
-default['netapp']['ssd_cache']['drive_refs'] = ['123', '234']
+default['netapp']['ssd_cache']['drive_refs'] = %w(123, 234)
 default['netapp']['ssd_cache']['name'] = 'flashCache'
 default['netapp']['ssd_cache']['enable_existing_volumes'] = false
