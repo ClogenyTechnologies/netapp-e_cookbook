@@ -32,7 +32,6 @@ default['netapp']['mirror_group']['secondary_array_id'] = 'e9f486b8-8634-4f58-95
 default['netapp']['network_configuration']['controllerRef'] = '07001233434353535325555'
 default['netapp']['network_configuration']['interfaceRef'] = '28000700312312435434534452000000000000'
 
-# Provide the values for the parameters whose values needs to be updated and keep the rest of the variable values empty or false for enableRemoteAccess variable
 # Provide the values for the parameters whose values needs to be updated and keep the rest of the variable values empty
 # Variables where value have been already assigned are the default values used when making the REST call.
 # Variables enableRemoteAccess,ipv4Enabled, ipv6Enabled can have value as false/true
