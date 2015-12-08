@@ -35,5 +35,3 @@ default['netapp']['snapshot_volume']['full_threshold'] = 0
 default['netapp']['snapshot_volume']['view_mode'] = 'readWrite'
 default['netapp']['snapshot_volume']['repository_percentage'] = 10_000_000_000
 default['netapp']['snapshot_volume']['repository_pool_id'] = '0400000060080E50003222300000025853F33C1A'
-
-
