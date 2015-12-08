@@ -36,4 +36,3 @@ default['netapp']['snapshot_group']['warning_threshold'] = 0
 default['netapp']['snapshot_group']['auto_delete_limit'] = 32
 default['netapp']['snapshot_group']['full_policy'] = 'failbasewrites'
 default['netapp']['snapshot_group']['storage_pool_id'] = '0400000060080E50003220A80000006F52D8010D'
-  
