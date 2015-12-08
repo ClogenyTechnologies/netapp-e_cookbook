@@ -27,3 +27,9 @@ default['netapp']['ssl_port'] = 8443
 default['netapp']['storage_system_ip'] = '10.113.1.130'
 default['netapp']['mirror_group']['name'] = 'mirror_group'
 default['netapp']['mirror_group']['secondary_array_id'] = 'e9f486b8-8634-4f58-9563-c57561633376'
+
+# firmware upgrade
+default['netapp']['firmware']['cfw_file'] = '<path_to_the_file>'
+default['netapp']['firmware']['nvsram_file'] = '<path_to_the_file>'
+default['netapp']['firmware']['stage_firmware'] = false
+default['netapp']['firmware']['skip_mel_check'] = false
