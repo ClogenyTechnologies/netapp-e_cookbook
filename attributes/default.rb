@@ -24,6 +24,18 @@ default['netapp']['ssl_port'] = 8443
 # default['netapp']['api']['timeout'] = 60000
 
 # mirror group
-default['netapp']['storage_system_ip'] = '10.113.1.130'
+default['netapp']['storage_system_ip'] = '10.113.1.18'
 default['netapp']['mirror_group']['name'] = 'mirror_group'
 default['netapp']['mirror_group']['secondary_array_id'] = 'e9f486b8-8634-4f58-9563-c57561633376'
+
+# Host group
+default['netapp']['host']['name'] = 'Demo_Host_1'
+default['netapp']['host']['host_default'] = false
+default['netapp']['host']['code'] = 'VmwTPPGFLUA'
+default['netapp']['host']['host_used'] = true
+default['netapp']['host']['index'] = 0
+default['netapp']['host']['host_type_name'] = 'VmwTPPGFLUA'
+default['netapp']['host']['ports'] = [{ 'type' => 'fc', 'port' => '4983294832', 'label' => 'esx_140a' },
+                                      { 'type' => 'fc', 'port' => '2101001B32A2D180', 'label' => 'esx_140b' }
+                                     ]
+default['netapp']['host']['groupid'] = '8500000060080E50001F69B400360CBE565E35E3'
