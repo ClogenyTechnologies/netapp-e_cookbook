@@ -33,5 +33,8 @@ default['netapp']['network_configuration']['controllerRef'] = '07001233434353535
 default['netapp']['network_configuration']['interfaceRef'] = '28000700312312435434534452000000000000'
 
 # Provide the values for the parameters whose values needs to be updated and keep the rest of the variable values empty or false for enableRemoteAccess variable
-default['netapp']['network_configuration']['update_parameters'] = { 'enableRemoteAccess' => false, 'ipv4GatewayAddress' => '', 'ipv6GatewayAddress' => '', 'ipv4Address' => '', 'ipv6LocalAddress' => '' }
-
+# Provide the values for the parameters whose values needs to be updated and keep the rest of the variable values empty
+# Variables where value have been already assigned are the default values used when making the REST call.
+# Variables enableRemoteAccess,ipv4Enabled, ipv6Enabled can have value as false/true
+# Varables ipv4AddressConfigMethod and ipv6AddressConfigMethod can have value configStatic/configDhcp
+default['netapp']['network_configuration']['update_parameters'] = { 'enable_RemoteAccess' => false, 'ipv4_Gateway_Address' => '', 'ipv6_Gateway_Address' => '', 'ipv4_Address' => '', 'ipv6_LocalAddress' => '', 'ipv4_Enabled' => false, 'ipv4_Address_ConfigMethod' => 'configDhcp', 'ipv6_Enabled' => false, 'ipv6_Address_ConfigMethod' => 'configStatic' }

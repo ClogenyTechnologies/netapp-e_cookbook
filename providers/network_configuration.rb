@@ -20,8 +20,14 @@
 include NetAppEHelper
 
 action :update do
-  request_body = { name: new_resource.name, controllerRef: new_resource.controllerRef, interfaceRef: new_resource.interfaceRef, update_parameters: new_resource.update_parameters }
+  request_body = { controllerRef: new_resource.controllerRef, interfaceRef: new_resource.interfaceRef }
 
+  new_resource.update_parameters.each do |key, value|
+    if new_resource.update_parameters[key] != ''
+      key = key.dup.delete! '_'
+      request_body[key] = value
+    end
+  end
   netapp_api = netapp_api_create
   netapp_api.login unless node['netapp']['basic_auth']
   resource_update_status = netapp_api.update_network_configuration(new_resource.storage_system, request_body)
