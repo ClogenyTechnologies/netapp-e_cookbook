@@ -34,4 +34,3 @@ default['netapp']['network_configuration']['interfaceRef'] = '280007003123124354
 
 # Provide the values for the parameters whose values needs to be updated and keep the rest of the variable values empty or false for enableRemoteAccess variable
 default['netapp']['network_configuration']['update_parameters'] = { 'enableRemoteAccess' => false, 'ipv4GatewayAddress' => '', 'ipv6GatewayAddress' => '', 'ipv4Address' => '', 'ipv6LocalAddress' => '' }
-
