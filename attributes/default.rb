@@ -24,6 +24,15 @@ default['netapp']['ssl_port'] = 8443
 # default['netapp']['api']['timeout'] = 60000
 
 # mirror group
-default['netapp']['storage_system_ip'] = '10.113.1.130'
+default['netapp']['storage_system_ip'] = '10.113.1.18'
 default['netapp']['mirror_group']['name'] = 'mirror_group'
 default['netapp']['mirror_group']['secondary_array_id'] = 'e9f486b8-8634-4f58-9563-c57561633376'
+
+# Snapshot Group
+default['netapp']['snapshot_group']['name'] = 'demo_snapshot_group'
+default['netapp']['snapshot_group']['base_mappable_object_id'] = '0200000060080E50001F69B40000151856611C78'
+default['netapp']['snapshot_group']['repository_percentage'] = 20
+default['netapp']['snapshot_group']['warning_threshold'] = 80
+default['netapp']['snapshot_group']['auto_delete_limit'] = 30
+default['netapp']['snapshot_group']['full_policy'] = 'unknown'
+default['netapp']['snapshot_group']['storage_pool_id'] = '0400000060080E50001F69B4000015175660AFB0'
