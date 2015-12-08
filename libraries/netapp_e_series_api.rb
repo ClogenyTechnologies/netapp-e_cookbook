@@ -98,7 +98,7 @@ class NetApp
         return false if host_grp_id.nil?
 
         response = request(:delete, "/devmgr/v2/storage-systems/#{sys_id}/host-groups/#{host_grp_id}")
-        status(response, 200, [200], 'Failed to delete host group')
+        status(response, 204, [204], 'Failed to delete host group')
       end
 
       # Call storage-pool API /devmgr/v2/{storage-system-id}/storage-pools to create a volume group or a disk pool.
