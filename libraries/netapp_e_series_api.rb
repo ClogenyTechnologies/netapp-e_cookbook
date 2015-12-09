@@ -41,7 +41,7 @@ class NetApp
         return false if sys_id.nil?
 
         response = request(:delete, "/devmgr/v2/storage-systems/#{sys_id}")
-        status(response, 200, [200], 'Storage Deletion Failed')
+        status(response, 204, [204], 'Storage Deletion Failed')
       end
 
       # Call storage system API /devmgr/v2/{storage-system-id}/passwords to change the password of the storage system
@@ -111,7 +111,7 @@ class NetApp
         return false unless pool_id.nil?
 
         response = request(:post, "/devmgr/v2/storage-systems/#{sys_id}/storage-pools", request_body.to_json)
-        status(response, 201, [201], 'Failed to create storage pool')
+        status(response, 200, [200], 'Failed to create storage pool')
       end
 
       # Call storage-pool API /devmgr/v2/{storage-system-id}/storage-pools/{storage-pool-id} to delete a volume group or a disk pool.
@@ -123,7 +123,7 @@ class NetApp
         return false if pool_id.nil?
 
         response = request(:delete, "/devmgr/v2/storage-systems/#{sys_id}/storage-pools/#{pool_id}")
-        status(response, 200, [200], 'Failed to delete storage pool')
+        status(response, 204, [204], 'Failed to delete storage pool')
       end
 
       # Call volume API /devmgr/v2/{storage-system-id}/volumes to create a new volume.
@@ -135,7 +135,7 @@ class NetApp
         return false unless vol_id.nil?
 
         response = request(:post, "/devmgr/v2/storage-systems/#{sys_id}/volumes", request_body.to_json)
-        status(response, 201, [201], 'Failed to create volume')
+        status(response, 200, [200], 'Failed to create volume')
       end
 
       # Call volume API /devmgr/v2/{storage-system-id}/volumes/{volume-id} to update volume attributes.
@@ -160,7 +160,7 @@ class NetApp
         return false if vol_id.nil?
 
         response = request(:delete, "/devmgr/v2/storage-systems/#{sys_id}/volumes/#{vol_id}")
-        status(response, 200, [200], 'Failed to delete volume')
+        status(response, 204, [204], 'Failed to delete volume')
       end
 
       # Call group snapshot API /devmgr/v2/{storage-system-id}/group-snapshots/ create a group snapshot.
