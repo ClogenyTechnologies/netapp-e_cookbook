@@ -27,3 +27,9 @@ default['netapp']['ssl_port'] = 8443
 default['netapp']['storage_system_ip'] = '10.113.1.130'
 default['netapp']['mirror_group']['name'] = 'mirror_group'
 default['netapp']['mirror_group']['secondary_array_id'] = 'e9f486b8-8634-4f58-9563-c57561633376'
+# optional parameter for Mirror Group
+# default['netapp']['mirror_group']['sync_interval_minutes'] = 10
+# default['netapp']['mirror_group']['manual_sync'] = false
+# default['netapp']['mirror_group']['recovery_warn_threshold_minutes'] = 20
+# default['netapp']['mirror_group']['repo_utilization_warn_threshold'] = 80
+# default['netapp']['mirror_group']['syncWarn_threshold_minutes'] = 10
