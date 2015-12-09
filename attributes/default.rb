@@ -24,9 +24,13 @@ default['netapp']['ssl_port'] = 8443
 # default['netapp']['api']['timeout'] = 60000
 
 # mirror group
-default['netapp']['storage_system_ip'] = '10.113.1.130'
+default['netapp']['storage_system_ip'] = '10.1.12.11'
 default['netapp']['mirror_group']['name'] = 'mirror_group'
 default['netapp']['mirror_group']['secondary_array_id'] = 'e9f486b8-8634-4f58-9563-c57561633376'
 
 # consistency group
 default['netapp']['consistency_group']['name'] = 'consistency_group'
+default['netapp']['consistency_group']['full_Warn_Threshold_Percent'] = 75
+default['netapp']['consistency_group']['auto_Delete_Threshold'] = 32
+default['netapp']['consistency_group']['repository_FullPolicy'] = 'purgepit'
+default['netapp']['consistency_group']['rollback_Priority'] = 'highest'
